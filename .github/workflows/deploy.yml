@@ -29,13 +29,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
-        run: yarn install # or pnpm install / yarn install / bun install
+        run: npm install # or pnpm install / yarn install / bun install
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: yarn # or pnpm / yarn
-          cache-dependency-path: '**/yarn.lock'
+          cache: npm # or pnpm / yarn
+          cache-dependency-path: '**/package-lock.json'
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -47,7 +47,7 @@ jobs:
 
       - name: Build with VitePress
         run: |
-          yarn run docs:build # or pnpm docs:build / npm run docs:build / bun run docs:build
+          npm run docs:build # or pnpm docs:build / yarn run docs:build / bun run docs:build
           touch docs/.vitepress/dist/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
