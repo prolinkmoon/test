@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: 20
           cache: yarn # or pnpm / yarn
-          cache-dependency-path: ${{github.workspace}}/functions/yarn.lock
+          cache-dependency-path: ${{github.workspace}}/yarn.lock
 
       - name: Checkout
         uses: actions/checkout@v4
