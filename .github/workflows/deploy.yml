@@ -31,14 +31,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          node-version: 20
-          cache: npm # or pnpm / yarn
+          fetch-depth: 0 # Not needed if lastUpdated is not enabled
+      # - uses: pnpm/action-setup@v2 # Uncomment this if you're using pnpm
+      # - uses: oven-sh/setup-bun@v1 # Uncomment this if you're using Bun
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm # or pnpm / yarn
-          cache-dependency-path: ./package-lock.json
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
