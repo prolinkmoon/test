@@ -38,7 +38,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm # or pnpm / yarn
+          cache: yarn # or pnpm / yarn
           cache-dependency-path: '/apps/docs/yarn.lock'
       - name: Setup Pages
         uses: actions/configure-pages@v4
